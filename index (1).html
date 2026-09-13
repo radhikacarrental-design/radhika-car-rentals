@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radhika Car Rental Services — Kolkata</title>
+<meta name="description" content="Radhika Car Rental Services — sedans, SUVs and luxury cars with verified drivers across Kolkata. Local trips, airport transfers, outstation and corporate travel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7F3EA;
+    --paper-line:#E3DAC3;
+    --charcoal:#211E1B;
+    --charcoal-soft:#33302B;
+    --taxi:#F3B300;
+    --taxi-deep:#C98F00;
+    --tram:#2E5233;
+    --tram-soft:#3E6B46;
+    --white:#FFFFFF;
+    --maroon:#7A2E2E;
+    --radius-sm:2px;
+    --max:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--charcoal);
+    font-family:'Work Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Big Shoulders Display', 'Arial Narrow', sans-serif;
+    font-weight:700;
+    letter-spacing:0.01em;
+    line-height:0.95;
+    margin:0;
+  }
+
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{margin:0;padding:0;list-style:none;}
+  button{font-family:inherit;cursor:pointer;}
+
+  :focus-visible{
+    outline:3px solid var(--tram);
+    outline-offset:2px;
+  }
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+  /* ---------- Top info strip ---------- */
+  .topstrip{
+    background:var(--charcoal);
+    color:var(--cream);
+    font-size:13.5px;
+  }
+  .topstrip .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    padding-top:9px;
+    padding-bottom:9px;
+    flex-wrap:wrap;
+  }
+  .topstrip .contact-list{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+  }
+  .topstrip .contact-list li{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    color:#D8D2C4;
+  }
+  .topstrip svg{width:14px;height:14px;flex:none;}
+  .topstrip .tagline{color:var(--taxi); font-weight:600;}
+
+  /* ---------- Nav ---------- */
+  nav.mainnav{
+    background:var(--cream);
+    border-bottom:1px solid var(--paper-line);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  nav.mainnav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:14px;
+    padding-bottom:14px;
+  }
+  .logo{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+  }
+  .logo .mark{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:800;
+    font-size:28px;
+    color:var(--charcoal);
+  }
+  .logo .mark span{color:var(--taxi-deep);}
+  .logo .sub{
+    font-size:11.5px;
+    color:var(--tram);
+    font-weight:600;
+    letter-spacing:0.03em;
+  }
+  .navlinks{
+    display:flex;
+    gap:30px;
+    align-items:center;
+  }
+  .navlinks a{
+    font-weight:600;
+    font-size:14.5px;
+    padding:6px 0;
+    border-bottom:2px solid transparent;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .navlinks a:hover{border-color:var(--taxi-deep);}
+  .navlinks .btn-call{
+    background:var(--charcoal);
+    color:var(--cream);
+    padding:9px 18px;
+    border-radius:var(--radius-sm);
+  }
+  .navlinks .btn-call:hover{background:var(--tram);}
+  .hamburger{
+    display:none;
+    background:none;
+    border:none;
+    padding:6px;
+  }
+  .hamburger span{
+    display:block;
+    width:24px;
+    height:2px;
+    background:var(--charcoal);
+    margin:5px 0;
+  }
+
+  @media (max-width:880px){
+    .navlinks{
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      background:var(--cream);
+      border-bottom:1px solid var(--paper-line);
+      flex-direction:column;
+      align-items:flex-start;
+      gap:0;
+      padding:6px 24px 18px;
+      display:none;
+    }
+    .navlinks.open{display:flex;}
+    .navlinks a{width:100%; padding:12px 0; border-bottom:1px solid var(--paper-line);}
+    .navlinks .btn-call{width:auto; margin-top:12px;}
+    .hamburger{display:block;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--charcoal);
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:40px;
+    align-items:center;
+    padding-top:64px;
+    padding-bottom:64px;
+  }
+  .hero h1{
+    font-size:clamp(48px,7vw,84px);
+    color:var(--cream);
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--taxi);
+  }
+  .hero .lede{
+    margin-top:22px;
+    font-size:18px;
+    max-width:46ch;
+    color:#D8D2C4;
+  }
+  .hero .cta-row{
+    margin-top:32px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:14px 24px;
+    font-weight:600;
+    font-size:15px;
+    border-radius:var(--radius-sm);
+    border:1.5px solid transparent;
+    transition:transform .12s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--taxi); color:var(--charcoal);}
+  .btn-primary:hover{background:var(--taxi-deep);}
+  .btn-outline{border-color:#5A564C; color:var(--cream);}
+  .btn-outline:hover{border-color:var(--cream);}
+
+  /* Quote card */
+  .quote-card{
+    background:var(--cream);
+    color:var(--charcoal);
+    padding:28px;
+    border-radius:var(--radius-sm);
+    box-shadow:0 24px 60px -20px rgba(0,0,0,0.5);
+  }
+  .quote-card .kicker{
+    font-size:13px;
+    font-weight:700;
+    color:var(--tram);
+    margin-bottom:4px;
+  }
+  .quote-card h3{
+    font-size:26px;
+    margin-bottom:18px;
+  }
+  .field{
+    margin-bottom:14px;
+  }
+  .field label{
+    display:block;
+    font-size:12.5px;
+    font-weight:600;
+    margin-bottom:5px;
+    color:var(--charcoal-soft);
+  }
+  .field select, .field input{
+    width:100%;
+    padding:11px 12px;
+    border:1.5px solid var(--paper-line);
+    border-radius:var(--radius-sm);
+    background:var(--white);
+    font-family:inherit;
+    font-size:14.5px;
+    color:var(--charcoal);
+  }
+  .field select:focus, .field input:focus{border-color:var(--tram);}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .quote-card .btn{width:100%; justify-content:center; margin-top:6px;}
+  .quote-note{font-size:12px; color:var(--charcoal-soft); margin-top:10px;}
+
+  @media (max-width:880px){
+    .hero .wrap{grid-template-columns:1fr; padding-top:40px; padding-bottom:40px;}
+  }
+
+  /* ---------- Trust strip ---------- */
+  .trust{
+    background:var(--cream);
+    border-bottom:1px solid var(--paper-line);
+  }
+  .trust .wrap{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+  }
+  .trust-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    padding:28px 20px;
+    border-left:1px solid var(--paper-line);
+  }
+  .trust-item:first-child{border-left:none;}
+  .trust-item svg{width:26px; height:26px; flex:none; color:var(--tram);}
+  .trust-item h4{font-family:'Work Sans'; font-size:15px; font-weight:700; margin:0 0 4px;}
+  .trust-item p{margin:0; font-size:13.5px; color:var(--charcoal-soft);}
+
+  @media (max-width:880px){
+    .trust .wrap{grid-template-columns:1fr 1fr;}
+    .trust-item{border-left:none; border-top:1px solid var(--paper-line);}
+    .trust-item:nth-child(2){border-left:1px solid var(--paper-line);}
+    .trust-item:nth-child(4){border-left:1px solid var(--paper-line);}
+  }
+
+  /* ---------- Section shell ---------- */
+  section.block{padding:76px 0;}
+  .section-head{
+    max-width:640px;
+    margin-bottom:44px;
+  }
+  .section-head .label{
+    color:var(--maroon);
+    font-weight:700;
+    font-size:13px;
+    margin-bottom:8px;
+  }
+  .section-head h2{
+    font-size:clamp(32px,4vw,46px);
+  }
+  .section-head p{
+    margin-top:12px;
+    color:var(--charcoal-soft);
+    font-size:16px;
+  }
+
+  /* ---------- Fleet ---------- */
+  .fleet-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--paper-line);
+    border:1px solid var(--paper-line);
+  }
+  .fleet-card{
+    background:var(--cream);
+    padding:30px 24px;
+  }
+  .fleet-card .tag{
+    display:inline-block;
+    font-size:11.5px;
+    font-weight:700;
+    color:var(--tram);
+    border:1px solid var(--tram);
+    padding:3px 9px;
+    border-radius:20px;
+    margin-bottom:18px;
+  }
+  .fleet-card svg{width:56px; height:56px; color:var(--charcoal); margin-bottom:16px;}
+  .fleet-card h3{font-family:'Work Sans'; font-size:18px; font-weight:700; margin-bottom:8px;}
+  .fleet-card ul{font-size:13.5px; color:var(--charcoal-soft);}
+  .fleet-card ul li{padding:3px 0;}
+
+  @media (max-width:960px){
+    .fleet-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .fleet-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Services ---------- */
+  .services-block{background:var(--charcoal); color:var(--cream);}
+  .services-block .section-head p{color:#C7C1B3;}
+  .services-block .section-head .label{color:var(--taxi);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:28px;
+  }
+  .service-card svg{width:32px; height:32px; color:var(--taxi); margin-bottom:16px;}
+  .service-card h3{font-family:'Work Sans'; font-size:17px; font-weight:700; margin-bottom:8px;}
+  .service-card p{font-size:13.5px; color:#B9B3A5; margin:0;}
+  @media (max-width:960px){.service-grid{grid-template-columns:1fr 1fr; row-gap:36px;}}
+  @media (max-width:560px){.service-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Stats ---------- */
+  .stats{
+    background:var(--taxi);
+  }
+  .stats .wrap{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    padding:40px 24px;
+  }
+  .stat{text-align:center; border-left:1px solid rgba(33,30,27,0.2);}
+  .stat:first-child{border-left:none;}
+  .stat .num{font-family:'Big Shoulders Display'; font-size:44px; font-weight:800; color:var(--charcoal);}
+  .stat .label{font-size:12.5px; font-weight:600; color:var(--charcoal-soft); margin-top:2px;}
+  @media (max-width:700px){
+    .stats .wrap{grid-template-columns:1fr 1fr; row-gap:24px;}
+    .stat:nth-child(2){border-left:1px solid rgba(33,30,27,0.2);}
+    .stat:nth-child(3){border-left:none;}
+  }
+
+  /* ---------- How it works ---------- */
+  .how-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:32px;
+  }
+  .how-step{position:relative; padding-left:52px;}
+  .how-step .n{
+    position:absolute; left:0; top:0;
+    font-family:'Big Shoulders Display';
+    font-size:34px;
+    font-weight:800;
+    color:var(--taxi-deep);
+    line-height:1;
+  }
+  .how-step h3{font-family:'Work Sans'; font-size:17px; font-weight:700; margin-bottom:6px;}
+  .how-step p{margin:0; font-size:14px; color:var(--charcoal-soft);}
+  @media (max-width:800px){.how-grid{grid-template-columns:1fr; gap:26px;}}
+
+  /* ---------- Testimonials ---------- */
+  .testi-block{background:var(--tram); color:var(--cream);}
+  .testi-block .section-head .label{color:var(--taxi);}
+  .testi-block .section-head p{color:#D7E3D8;}
+  .testi-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  .testi-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.18);
+    padding:28px;
+    border-radius:var(--radius-sm);
+  }
+  .testi-card p.quote{font-size:16px; line-height:1.6; margin:0 0 18px;}
+  .testi-card .who{font-weight:700; font-size:14px;}
+  .testi-card .meta{font-size:12.5px; color:#C4D6C6;}
+  @media (max-width:760px){.testi-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Contact / CTA ---------- */
+  .contact-block .wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+  }
+  .contact-info h2{font-size:clamp(30px,4vw,42px); margin-bottom:16px;}
+  .contact-info p{color:var(--charcoal-soft); max-width:44ch; margin-bottom:26px;}
+  .contact-detail{display:flex; gap:14px; align-items:flex-start; margin-bottom:18px;}
+  .contact-detail svg{width:20px; height:20px; color:var(--tram); flex:none; margin-top:2px;}
+  .contact-detail .t{font-weight:700; font-size:14px;}
+  .contact-detail .d{font-size:14px; color:var(--charcoal-soft);}
+
+  .contact-form{
+    background:var(--white);
+    border:1px solid var(--paper-line);
+    padding:30px;
+    border-radius:var(--radius-sm);
+  }
+  .contact-form h3{font-family:'Work Sans'; font-size:19px; font-weight:700; margin-bottom:18px;}
+  .contact-form .field-row{grid-template-columns:1fr 1fr;}
+  textarea{
+    width:100%;
+    padding:11px 12px;
+    border:1.5px solid var(--paper-line);
+    border-radius:var(--radius-sm);
+    font-family:inherit;
+    font-size:14.5px;
+    resize:vertical;
+    min-height:90px;
+  }
+  @media (max-width:880px){
+    .contact-block .wrap{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--charcoal);
+    color:#B9B3A5;
+    padding:36px 0;
+    font-size:13.5px;
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  footer a:hover{color:var(--taxi);}
+  footer .foot-links{display:flex; gap:20px; flex-wrap:wrap;}
+
+  /* WhatsApp floating button */
+  .wa-float{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    background:var(--tram);
+    color:var(--cream);
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 24px -8px rgba(0,0,0,0.5);
+    z-index:60;
+  }
+  .wa-float svg{width:26px; height:26px;}
+  .wa-float:hover{background:var(--tram-soft);}
+</style>
+</head>
+<body>
+
+<div class="topstrip">
+  <div class="wrap">
+    <ul class="contact-list">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.2a2 2 0 0 1 2.11-.45c.85.3 1.73.51 2.63.63A2 2 0 0 1 22 16.92z"/></svg>
+        +91 90388 91524
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+        radhikacarrental@gmail.com
+      </li>
+      <li class="tagline">Kolkata's roads, sorted since day one</li>
+    </ul>
+  </div>
+</div>
+
+<nav class="mainnav">
+  <div class="wrap">
+    <a href="#home" class="logo">
+      <span class="mark">Radhika<span>.</span></span>
+      <span class="sub">CAR RENTALS · KOLKATA</span>
+    </a>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#fleet">Fleet</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:+919038891524" class="btn-call">Call now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <h1>Kolkata's roads,<br><em>sorted.</em></h1>
+      <p class="lede">Sedans, SUVs and chauffeur-driven luxury cars with verified drivers — booked in minutes, ready when you are. Local trips, airport runs, outstation and events, all under one roof.</p>
+      <div class="cta-row">
+        <a href="#quote" class="btn btn-primary">Check availability</a>
+        <a href="tel:+919038891524" class="btn btn-outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.2a2 2 0 0 1 2.11-.45c.85.3 1.73.51 2.63.63A2 2 0 0 1 22 16.92z"/></svg>
+          Call a coordinator
+        </a>
+      </div>
+    </div>
+
+    <form class="quote-card" id="quote">
+      <div class="kicker">Get a quote</div>
+      <h3>Fill this, we'll call you back</h3>
+
+      <div class="field">
+        <label for="cartype">Car type</label>
+        <select id="cartype">
+          <option>Sedan (4 seater)</option>
+          <option>SUV / MUV (6–7 seater)</option>
+          <option>Multi-seater (9 seater)</option>
+          <option>Luxury car</option>
+        </select>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="triptype">Trip type</label>
+          <select id="triptype">
+            <option>Local (within Kolkata)</option>
+            <option>Airport transfer</option>
+            <option>Outstation</option>
+            <option>Corporate / event</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="pickupdate">Pickup date</label>
+          <input type="date" id="pickupdate">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="phone">Your phone number</label>
+        <input type="tel" id="phone" placeholder="10-digit mobile number" inputmode="numeric">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Get quote on WhatsApp</button>
+      <p class="quote-note">No cost to enquire. We reply within the hour during business hours.</p>
+    </form>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div><h4>Round-the-clock dispatch</h4><p>Day or night, a car is on its way — our fleet runs 24x7 across the city.</p></div>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6z"/></svg>
+      <div><h4>Fully insured fleet</h4><p>Every car on the road with Radhika is comprehensively insured.</p></div>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>
+      <div><h4>No cancellation fee</h4><p>Plans change. Cancel your booking without any penalty, any time before pickup.</p></div>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <div><h4>Verified drivers</h4><p>Every driver is background-checked and trained on city routes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="fleet">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="label">The fleet</div>
+      <h2>A car for every trip</h2>
+      <p>From a quick city hop to a chauffeured evening out, pick the class that fits — every car is cleaned and checked before it reaches you.</p>
+    </div>
+    <div class="fleet-grid">
+      <div class="fleet-card">
+        <span class="tag">4 seats</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17h14M5 17a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm14 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM5 17V9l2-5h10l2 5v8"/><path d="M3 12h18"/></svg>
+        <h3>Sedan</h3>
+        <ul>
+          <li>Swift Dzire</li>
+          <li>Honda City</li>
+          <li>Toyota Corolla</li>
+        </ul>
+      </div>
+      <div class="fleet-card">
+        <span class="tag">6–7 seats</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17h14M5 17a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm14 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM4 17V8l2-4h12l3 5v8"/><path d="M3 12h18M8 4v8m8-8v8"/></svg>
+        <h3>SUV / MUV</h3>
+        <ul>
+          <li>Toyota Innova</li>
+          <li>Innova Crysta</li>
+        </ul>
+      </div>
+      <div class="fleet-card">
+        <span class="tag">9 seats</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 17v2M17 17v2M3 12h18M7 7V5h10v2"/></svg>
+        <h3>Multi-seater</h3>
+        <ul>
+          <li>Tempo Traveller</li>
+          <li>Group vans</li>
+        </ul>
+      </div>
+      <div class="fleet-card">
+        <span class="tag">Chauffeured</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 16h14M5 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm14 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM4 16V9l3-5h10l3 5v7"/><path d="M2 11h20"/></svg>
+        <h3>Luxury</h3>
+        <ul>
+          <li>Camry, Audi A4/A6</li>
+          <li>BMW 3/5 Series</li>
+          <li>Mercedes C/S Class</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block services-block" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="label">What we do</div>
+      <h2>Built for how Kolkata actually travels</h2>
+      <p>Four kinds of trips, one number to call for all of them.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        <h3>Corporate travel</h3>
+        <p>Reliable pickups for client visits, office commutes and business events, billed the way your finance team needs.</p>
+      </div>
+      <div class="service-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2C4.3 6.1 4 6.4 4 6.8l1.2 1.5 4 2-2 2H4l-1 1 3 1 1 3 1-1v-3l2-2 2 4 1.5 1.2c.4.4.8.1.7-.4Z"/></svg>
+        <h3>Airport transfers</h3>
+        <p>Timed to your flight, with drivers who track delays so nobody's left waiting at the terminal.</p>
+      </div>
+      <div class="service-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"/></svg>
+        <h3>City tours</h3>
+        <p>See Kolkata at your own pace with drivers who know the city's sights, shortcuts and best food stops.</p>
+      </div>
+      <div class="service-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M2 21h20"/></svg>
+        <h3>Outstation & events</h3>
+        <p>Weddings, group outings and long-distance trips, handled with a fleet sized to your group.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <!-- TODO: swap these for your real numbers as the business grows -->
+  <div class="wrap">
+    <div class="stat"><div class="num">40+</div><div class="label">Cars in fleet</div></div>
+    <div class="stat"><div class="num">30+</div><div class="label">Verified drivers</div></div>
+    <div class="stat"><div class="num">24/7</div><div class="label">Dispatch hours</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">Trip types covered</div></div>
+  </div>
+</section>
+
+<section class="block" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="label">Booking</div>
+      <h2>Three steps, one call</h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="n">1</div>
+        <h3>Tell us your trip</h3>
+        <p>Share your pickup point, date and car preference by phone, WhatsApp or the form above.</p>
+      </div>
+      <div class="how-step">
+        <div class="n">2</div>
+        <h3>Get instant confirmation</h3>
+        <p>We confirm the car, driver and fare upfront — no surprises at drop-off.</p>
+      </div>
+      <div class="how-step">
+        <div class="n">3</div>
+        <h3>Ride, tracked end to end</h3>
+        <p>Your driver arrives on time, and our coordinators stay reachable for the whole trip.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block testi-block" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="label">In their words</div>
+      <h2>What riders say</h2>
+      <!-- TODO: replace with real customer reviews once you have them -->
+      <p>Placeholder reviews below — swap these for real feedback from your first customers.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p class="quote">"Booked an airport pickup at short notice and the driver was waiting before we landed. Made a long travel day much easier."</p>
+        <div class="who">Ananya Sen</div>
+        <div class="meta">City tour, Kolkata</div>
+      </div>
+      <div class="testi-card">
+        <p class="quote">"We used them for a two-day outstation trip with the whole family. Clean car, careful driver, fair pricing throughout."</p>
+        <div class="who">Rajat Bose</div>
+        <div class="meta">Outstation trip</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block contact-block" id="contact">
+  <div class="wrap">
+    <div class="contact-info">
+      <h2>Let's get you moving</h2>
+      <p>Reach out for a fare estimate, a fleet question, or to book directly — our coordinators are on call every day of the week.</p>
+
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.2a2 2 0 0 1 2.11-.45c.85.3 1.73.51 2.63.63A2 2 0 0 1 22 16.92z"/></svg>
+        <div><div class="t">Phone</div><div class="d">+91 90388 91524</div></div>
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+        <div><div class="t">Email</div><div class="d">radhikacarrental@gmail.com</div></div>
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><div class="t">Office</div><div class="d">2 No, Vidyasagar Sarani, Uttar Rania, Rajpur Sonarpur, Kolkata, West Bengal 700154</div></div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactform">
+      <h3>Send a message</h3>
+      <div class="field-row">
+        <div class="field">
+          <label for="cname">Name</label>
+          <input type="text" id="cname" placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="cphone">Phone</label>
+          <input type="tel" id="cphone" placeholder="10-digit number">
+        </div>
+      </div>
+      <div class="field">
+        <label for="cmsg">Message</label>
+        <textarea id="cmsg" placeholder="Tell us about your trip"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send message</button>
+      <p class="quote-note">This form opens WhatsApp with your message pre-filled — connect a form service like Formspree if you'd rather receive emails directly.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="year"></span> Radhika Car Rental Services. All rights reserved.</div>
+    <div class="foot-links">
+      <a href="#home">Home</a>
+      <a href="#fleet">Fleet</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919038891524" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.36a9.87 9.87 0 0 0 4.62 1.15h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2Zm0 18.06h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.79.84-3.04-.2-.31a8.15 8.15 0 0 1-1.25-4.35c0-4.52 3.68-8.2 8.24-8.2 2.2 0 4.27.86 5.82 2.42a8.15 8.15 0 0 1 2.41 5.79c0 4.53-3.68 8.23-8.24 8.23Zm4.51-6.16c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.96-.14.16-.29.18-.53.06-.25-.12-1.04-.38-1.99-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.57.12.16 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const hamburger = document.getElementById('hamburger');
+  const navlinks = document.getElementById('navlinks');
+  hamburger.addEventListener('click', () => {
+    const isOpen = navlinks.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navlinks.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }));
+
+  const WHATSAPP_NUMBER = '919038891524';
+
+  document.getElementById('quote').addEventListener('submit', function(e){
+    e.preventDefault();
+    const car = document.getElementById('cartype').value;
+    const trip = document.getElementById('triptype').value;
+    const date = document.getElementById('pickupdate').value || 'not specified';
+    const phone = document.getElementById('phone').value || 'not provided';
+    const msg = `Hi Radhika Car Rentals, I'd like a quote.%0ACar type: ${encodeURIComponent(car)}%0ATrip type: ${encodeURIComponent(trip)}%0APickup date: ${encodeURIComponent(date)}%0AMy number: ${encodeURIComponent(phone)}`;
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
+  });
+
+  document.getElementById('contactform').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('cname').value || 'not provided';
+    const phone = document.getElementById('cphone').value || 'not provided';
+    const message = document.getElementById('cmsg').value || '';
+    const msg = `Hi Radhika Car Rentals, my name is ${encodeURIComponent(name)} (${encodeURIComponent(phone)}). ${encodeURIComponent(message)}`;
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
+  });
+</script>
+
+</body>
+</html>
