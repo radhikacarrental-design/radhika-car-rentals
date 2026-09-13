@@ -503,6 +503,27 @@
   .wa-float svg{width:26px; height:26px;}
   .wa-float:hover{background:var(--tram-soft);}
 </style>
+<script type="module">
+  // ---- Firebase setup ----
+  // TODO: paste your own config object here (from Firebase console → Project settings → Your apps)
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCQ4vzP0XzJPkqKVMJK5y3ZyWxRUKhwJjc",
+    authDomain: "radhika-car-rentals.firebaseapp.com",
+    databaseURL: "https://radhika-car-rentals-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "radhika-car-rentals",
+    storageBucket: "radhika-car-rentals.firebasestorage.app",
+    messagingSenderId: "985093595023",
+    appId: "1:985093595023:web:adcf80d072f4589e84b5fa",
+    measurementId: "G-38K70R2NF2"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  window.__radhikaDb = { db, collection, addDoc, serverTimestamp };
+</script>
 </head>
 <body>
 
@@ -833,21 +854,37 @@
 
   const WHATSAPP_NUMBER = '919038891524';
 
-  document.getElementById('quote').addEventListener('submit', function(e){
+  async function saveBooking(data){
+    try{
+      const { db, collection, addDoc, serverTimestamp } = window.__radhikaDb;
+      await addDoc(collection(db, 'bookings'), { ...data, status: 'pending', createdAt: serverTimestamp() });
+    }catch(err){
+      console.error('Could not save booking to database:', err);
+      // Booking still proceeds via WhatsApp even if the database save fails.
+    }
+  }
+
+  document.getElementById('quote').addEventListener('submit', async function(e){
     e.preventDefault();
     const car = document.getElementById('cartype').value;
     const trip = document.getElementById('triptype').value;
     const date = document.getElementById('pickupdate').value || 'not specified';
     const phone = document.getElementById('phone').value || 'not provided';
+
+    await saveBooking({ type: 'quote', carType: car, tripType: trip, pickupDate: date, phone: phone });
+
     const msg = `Hi Radhika Car Rentals, I'd like a quote.%0ACar type: ${encodeURIComponent(car)}%0ATrip type: ${encodeURIComponent(trip)}%0APickup date: ${encodeURIComponent(date)}%0AMy number: ${encodeURIComponent(phone)}`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
   });
 
-  document.getElementById('contactform').addEventListener('submit', function(e){
+  document.getElementById('contactform').addEventListener('submit', async function(e){
     e.preventDefault();
     const name = document.getElementById('cname').value || 'not provided';
     const phone = document.getElementById('cphone').value || 'not provided';
     const message = document.getElementById('cmsg').value || '';
+
+    await saveBooking({ type: 'contact', name: name, phone: phone, message: message });
+
     const msg = `Hi Radhika Car Rentals, my name is ${encodeURIComponent(name)} (${encodeURIComponent(phone)}). ${encodeURIComponent(message)}`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
   });
